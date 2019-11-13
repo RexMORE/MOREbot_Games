@@ -3,42 +3,36 @@
 
 ## DATATYPES 	KEYWORD1 	##
 
-## OBJECTS 		KEYWORD1  	##
+## OBJECTS 	KEYWORD1  	##
 
-motor			KEYWORD1
-ultrasonic		KEYWORD1
-bluetooth 		KEYWORD1
-MOREbot			KEYWORD1
+Sprite			KEYWORD1
+oLED			KEYWORD1
+Grid			KEYWORD1
 
 ## FUNCTIONS 	KEYWORD2  	##
 
-# Motor Functions
+# Sprite Functions
 
-forward			KEYWORD2
-backward		KEYWORD2
-stop			KEYWORD2
+draw			KEYWORD2
+erase			KEYWORD2
+setPostition		KEYWORD2
+getX			KEYWORD2
+getY			KEYWORD2
+getW			KEYWORD2
 
-# Ultrasonic Functions
+# oLED Functions
 
-readDistance	KEYWORD2
+load			KEYWORD2
+fill			KEYWORD2
+clear			KEYWORD2
+drawPixel		KEYWORD2
+drawPixels		KEYWORD2
+drawLine		KEYWORD2
+drawRect		KEYWORD2
+drawText		KEYWORD2
+drawBitmap		KEYWORD2
+createSprite		KEYWORD2
 
-# Bluetooth Functions
-
-processData		KEYWORD2
-getSpeed		KEYWORD2
-getDirection	KEYWORD2
-getButton		KEYWORD2
-getSlider		KEYWORD2
-getSliderValue	KEYWORD2
-getText			KEYWORD2
-getModeButton	KEYWORD2
-
-# MOREbot Functions
-
-getLeftMotor	KEYWORD2
-getRightMotor	KEYWORD2
-getUltrasonic	KEYWORD2
-getBluetooth	KEYWORD2
 
 ## INSTANCES 	KEYWORD2  	##
 
