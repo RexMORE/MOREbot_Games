@@ -9,10 +9,10 @@ class gameController
   public:
     oLED display;
 
-    int defleft = 7;
-    int defright = 6;
-    int defup = 5;
-    int defdown = 4;
+    int defLeft = 7;
+    int defRight = 6;
+    int defUp = 5;
+    int defDown = 4;
     int defXaxis = A0;
     int defYaxis = A1;
     int defSaxis = A2;

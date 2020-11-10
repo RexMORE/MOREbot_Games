@@ -12,7 +12,7 @@ gameController::gameController(){
 	inputs[5] = defYaxis;
 	inputs[6] = defSaxis;
 
-	for(int i = 0; i < 4){
+	for(int i = 0; i < 4; i++){
 		pinMode(inputs[i], INPUT_PULLUP);
 	}
 }
@@ -27,7 +27,7 @@ gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, in
 	inputs[5] = defYaxis;
 	inputs[6] = defSaxis;
 
-	for(int i = 0; i < 4){
+	for(int i = 0; i < 4; i++){
 		pinMode(inputs[i], INPUT_PULLUP);
 	}
 }
@@ -41,7 +41,7 @@ gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, in
 	inputs[5] = joyY;
 	inputs[6] = defSaxis;
 
-	for(int i = 0; i < 4){
+	for(int i = 0; i < 4; i++){
 		pinMode(inputs[i], INPUT_PULLUP);
 	}
 }
@@ -55,7 +55,7 @@ gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, in
 	inputs[5] = joyY;
 	inputs[6] = joyS;
 
-	for(int i = 0; i < 4){
+	for(int i = 0; i < 4; i++){
 		pinMode(inputs[i], INPUT_PULLUP);
 	}
 }
@@ -117,31 +117,31 @@ void gameController::clear() {
 }
 
 void gameController::drawPixel(int x, int y) {
-  display.drawPixel(int x, int y);
+  display.drawPixel(x, y);
 }
 
 void gameController::drawPixels(int x, int y, uint8_t pixels) {
-  display.drawPixels(int x, int y, uint8_t pixels);
+  display.drawPixels(x, y, pixels);
 }
 
 void gameController::drawLine(int x1, int y1, int x2, int y2) {
-  display.drawLine(int x1, int y1, int x2, int y2);
+  display.drawLine(x1, y1, x2, y2);
 }
 
 void gameController::drawRect(int x1, int y1, int x2, int y2) {
-  display.drawRect(int x1, int y1, int x2, int y2);
+  display.drawRect(x1, y1, x2, y2);
 }
 
 void gameController::drawText(int posX, int posY, int height, char* text) {
-  display.drawText(int posX, int posY, int height, char* text);
+  display.drawText(posX, posY, height, text);
 }
 
 void gameController::drawText(int posX, int posY, int height, char* text, char style) {
-  display.drawText(int posX, int posY, int height, char* text, char style);
+  display.drawText(posX, posY,  height, text, style);
 }
 
 void gameController::drawBitmap(int x1, int y1, int w, int h, uint8_t* buffer) {
-  display.drawBitmap(int x1, int y1, int w, int h, uint8_t* buffer);
+  display.drawBitmap(x1, y1, w, h, buffer);
 }
 
 Sprite gameController::createSprite(int posX, int posY, int width, uint8_t* buffer) {
