@@ -1,6 +1,7 @@
 #ifndef oLED_h
 #define oLED_h
 
+#include "Arduino.h"
 #include "ssd1306.h"
 
 class Sprite

@@ -1,9 +1,9 @@
-
+#include "Arduino.h"
+#include "gamesKit.h"
+#include "oLED.h"
+#include "ssd1306.h"
 
 gameController::gameController(){
-	display.load();
-	display.clear();
-
 	inputs[0] = defLeft;
 	inputs[1] = defRight;
 	inputs[2] = defUp;
@@ -19,9 +19,6 @@ gameController::gameController(){
 
 
 gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, int buttonDown){
-	display.load();
-	display.clear();
-
 	inputs[0] = buttonLeft;
 	inputs[1] = buttonRight;
 	inputs[2] = buttonUp;
@@ -36,9 +33,6 @@ gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, in
 }
 
 gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, int buttonDown, int joyX, int joyY){
-	display.load();
-	display.clear();
-
 	inputs[0] = buttonLeft;
 	inputs[1] = buttonRight;
 	inputs[2] = buttonUp;
@@ -53,9 +47,6 @@ gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, in
 }
 
 gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, int buttonDown, int joyX, int joyY, int joyS){
-	display.load();
-	display.clear();
-
 	inputs[0] = buttonLeft;
 	inputs[1] = buttonRight;
 	inputs[2] = buttonUp;
@@ -67,6 +58,11 @@ gameController::gameController(int buttonLeft, int buttonRight, int buttonUp, in
 	for(int i = 0; i < 4){
 		pinMode(inputs[i], INPUT_PULLUP);
 	}
+}
+
+void gameController::load(){
+	display.load();
+	display.clear();
 }
 
 void gameController::loadInputs(){
@@ -84,31 +80,31 @@ void gameController::loadInputs(){
 	}
 }
 
-bool gameContoller::leftPressed(){
+bool gameController::leftPressed(){
 	return inputVals[0] == 1;
 }
 
-bool gameContoller::rightPressed(){
+bool gameController::rightPressed(){
 	return inputVals[1] == 1;
 }
 
-bool gameContoller::upPressed(){
+bool gameController::upPressed(){
 	return inputVals[2] == 1;
 }
 
-bool gameContoller::downPressed(){
+bool gameController::downPressed(){
 	return inputVals[3] == 1;
 }
 
-int gameContoller::joyXValue(){
+int gameController::joyXValue(){
 	return inputVals[4];
 }
 
-int gameContoller::joyXValue(){
+int gameController::joyYValue(){
 	return inputVals[5];
 }
 
-bool gameContoller::joyPressed(){
+bool gameController::joyPressed(){
 	return inputVals[7] == 1;
 }
 

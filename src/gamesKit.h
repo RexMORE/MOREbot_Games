@@ -16,20 +16,23 @@ class gameController
     int defXaxis = A0;
     int defYaxis = A1;
     int defSaxis = A2;
-    int[] inputs[7];
-    int[] inputVals[7];
+    int inputs[7];
+    int inputVals[7];
 
     gameController();
     gameController(int buttonLeft, int buttonRight, int buttonUp, int buttonDown);
     gameController(int buttonLeft, int buttonRight, int buttonUp, int buttonDown, int joyX, int joyY);
     gameController(int buttonLeft, int buttonRight, int buttonUp, int buttonDown, int joyX, int joyY, int joyS);
 
+    void load();
+
+    void loadInputs();
     bool leftPressed();
     bool rightPressed();
     bool upPressed();
     bool downPressed();
     int joyXValue();
-    int joyXValue();
+    int joyYValue();
     bool joyPressed();
 
     oLED getDisplay();
