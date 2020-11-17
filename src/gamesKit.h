@@ -4,11 +4,34 @@
 #include "Arduino.h"
 #include "oLED.h"
 
+class dispMem
+{
+private:
+    uint8_t memArray[128][8];
+
+public:
+    dispMem();
+
+    uint8_t setMemBit(int x, int y);
+    uint8_t setMemByte(int x, int y, uint8_t b);
+
+    bool    getMemBit(int x, int y);
+    uint8_t getMemByte(int x, int y);
+
+    bool    clearMem();
+    void    getFullArray(uint8_t outArray[][8]);
+};
+
 class gameController 
 {
-  public:
+private:
     oLED display;
+    dispMem* scrnMem;
 
+    bool memFlag = false;
+
+
+public:
     int defLeft = 7;
     int defRight = 6;
     int defUp = 5;
@@ -36,6 +59,10 @@ class gameController
     bool joyPressed();
 
     oLED getDisplay();
+
+    void useMemory();
+    void dumpMemory();
+
     void drawRect(int posX, int posY, int width, int height);
     void drawLine(int x1, int y1, int x2, int y2);
     void drawText(int posX, int posY, int height, char* text);
