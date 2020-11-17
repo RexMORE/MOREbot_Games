@@ -81,19 +81,19 @@ void gameController::loadInputs(){
 }
 
 bool gameController::leftPressed(){
-	return inputVals[0] == 1;
+	return inputVals[0] == 0;
 }
 
 bool gameController::rightPressed(){
-	return inputVals[1] == 1;
+	return inputVals[1] == 0;
 }
 
 bool gameController::upPressed(){
-	return inputVals[2] == 1;
+	return inputVals[2] == 0;
 }
 
 bool gameController::downPressed(){
-	return inputVals[3] == 1;
+	return inputVals[3] == 0;
 }
 
 int gameController::joyXValue(){
