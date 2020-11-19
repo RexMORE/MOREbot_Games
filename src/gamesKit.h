@@ -63,14 +63,16 @@ public:
     void useMemory();
     void dumpMemory();
 
-    void drawRect(int posX, int posY, int width, int height);
-    void drawLine(int x1, int y1, int x2, int y2);
-    void drawText(int posX, int posY, int height, char* text);
-    void drawText(int posX, int posY, int height, char* text, char style);
     void drawPixel(int x, int y);
     void drawPixels(int x, int y, uint8_t pixels);
-    void drawBitmap(int x, int y, int width, int height, uint8_t* buffer);
-    Sprite createSprite(int posX, int posY, int width, uint8_t* buffer);
+    void drawLine(int x1, int y1, int x2, int y2);
+    void drawRect(int x1, int y1, int x2, int y2);
+    void drawText(int x, int y, int h, char* text);
+    void drawText(int x, int y, int h, char* text, char style);
+
+    void drawBitmap(int x, int y, int w, int h, uint8_t* buffer);
+    Sprite createSprite(int x, int y, int w, uint8_t* buffer);
+
     void clear();
     void fill(uint8_t pixels);
 };

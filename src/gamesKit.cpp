@@ -177,11 +177,21 @@ void gameController::clear() {
 }
 
 void gameController::drawPixel(int x, int y) {
+	if(x < 0) x = 0;
+	if(x > 127) x = 127;
+	if(y < 0) y = 0;
+	if(y > 63) y = 63;
+	
   	if(memFlag) display.drawPixels(x, 8*(y/8), scrnMem->setMemBit(x, y));
   	else display.drawPixel(x, y);
 }
 
 void gameController::drawPixels(int x, int y, uint8_t pixels) {
+	if(x < 0) x = 0;
+	if(x > 127) x = 127;
+	if(y < 0) y = 0;
+	if(y > 63) y = 63;
+
 	if(memFlag){
 		if(y % 8 == 0){
 			display.drawPixels(x, y, scrnMem->setMemByte(x, y, pixels));
@@ -198,10 +208,30 @@ void gameController::drawPixels(int x, int y, uint8_t pixels) {
 }
 
 void gameController::drawLine(int x1, int y1, int x2, int y2) {
+	if(x1 < 0) x = 0;
+	if(x1 > 127) x = 127;
+	if(y1 < 0) y = 0;
+	if(y1 > 63) y = 63;
+
+	if(x2 < 0) x = 0;
+	if(x2 > 127) x = 127;
+	if(y2 < 0) y = 0;
+	if(y2 > 63) y = 63;
+
   	display.drawLine(x1, y1, x2, y2);
 }
 
 void gameController::drawRect(int x1, int y1, int x2, int y2) {
+	if(x1 < 0) x = 0;
+	if(x1 > 127) x = 127;
+	if(y1 < 0) y = 0;
+	if(y1 > 63) y = 63;
+
+	if(x2 < 0) x = 0;
+	if(x2 > 127) x = 127;
+	if(y2 < 0) y = 0;
+	if(y2 > 63) y = 63;
+
 	if(memFlag){
 		if(x1 > x2){
 			int tx = x1;
@@ -227,18 +257,47 @@ void gameController::drawRect(int x1, int y1, int x2, int y2) {
 	}
 }
 
-void gameController::drawText(int posX, int posY, int height, char* text) {
-  	display.drawText(posX, posY, height, text);
+void gameController::drawText(int x, int y, int h, char* text) {
+	if(x < 0) x = 0;
+	if(x > 127) x = 127;
+	if(y < 0) y = 0;
+	if(y > 63) y = 63;
+	if(h < 0) h = 0;
+	if(h > 4) h = 4;
+
+  	display.drawText(x, y, h, text);
 }
 
-void gameController::drawText(int posX, int posY, int height, char* text, char style) {
-  	display.drawText(posX, posY,  height, text, style);
+void gameController::drawText(int x, int y, int h, char* text, char style) {
+	if(x < 0) x = 0;
+	if(x > 127) x = 127;
+	if(y < 0) y = 0;
+	if(y > 63) y = 63;
+	if(h < 0) h = 0;
+	if(h > 4) h = 4;
+
+  	display.drawText(x, y,  h, text, style);
 }
 
-void gameController::drawBitmap(int x1, int y1, int w, int h, uint8_t* buffer) {
-  	display.drawBitmap(x1, y1, w, h, buffer);
+void gameController::drawBitmap(int x, int y, int w, int h, uint8_t* buffer) {
+	if(x < 0) x = 0;
+	if(x > 127) x = 127;
+	if(y < 0) y = 0;
+	if(y > 63) y = 63;
+
+	if(w < 0) w = 0;
+	if(h < 0) h = 0;
+
+  	display.drawBitmap(x, y, w, h, buffer);
 }
 
-Sprite gameController::createSprite(int posX, int posY, int width, uint8_t* buffer) {
-  	return Sprite(posX, posY, width, buffer);
+Sprite gameController::createSprite(int x, int y, int w, uint8_t* buffer) {
+	if(x < 0) x = 0;
+	if(x > 127) x = 127;
+	if(y < 0) y = 0;
+	if(y > 63) y = 63;
+
+	if(w < 0) w = 0;
+
+  	return Sprite(x, y, w, buffer);
 }
